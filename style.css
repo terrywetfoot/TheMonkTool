@@ -1,0 +1,12 @@
+*{
+    font-size: 18px;
+}
+
+table {
+    width: 100%;
+    padding: 5%;
+}
+
+td.blank{
+    background:grey;
+}
