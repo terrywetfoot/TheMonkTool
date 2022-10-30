@@ -56,8 +56,8 @@ body{
     padding: 1%;
 }
 input, select{
-    height: 40px;
-    font-size: 20px;
+    height: 50px;
+    font-size: 24px;
     border-radius: 3%;
     background: rgba(110,140,140, .8);
     border-color: rgba(0,0,0, .2) rgba(100,100,100, .2) rgba(100,100,100, .2) rgba(0,0,0, .2);
@@ -66,7 +66,7 @@ input, select{
 }
 
 input {
-    width: 200px;
+    width: 210px;
     
 }
 ::placeholder {
