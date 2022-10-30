@@ -6,90 +6,142 @@
     
 </head>
 <body>
+
     
-<table>
+<span class="input-form">
+<!-- ------------------------------------------------------------------------>     
+    <div class="top-section">
+
+    <span></span>
+    <span><input type=text id="bg-input" placeholder="BRAND GYLE/T"></span>
     
+    <span></span>
+        <span><select name="no-of-formats" id="no-of-formats" > Select...
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            </select></span>
     
-<thead>
-  <tr>
-    <th>Format</th>
-    <th>How Many Cases?</th>
-    <th></th>
-  </tr>
-</thead>
+
+    </div>
+<!-- ------------------------------------------------------------------------> 
+    <div class="format-section">
+
+    <div id="fm1">
+        <select name="format1" id="format1"  >Select...
+            <option type=number value="1">330x12</option>
+            <option value="2">330x24</option>
+            <option value="3">330x6x4</option>
+            <option value="4">440x12</option>
+            <option value="5">440x24</option>
+            <option value="6">440x6x4</option>
+        </select>
+        <input id="inputAmtCases1">
+        
+        </div>
+        
+    <div id="fm2">
+        <select name="format2" id="format2"  >Select...
+            <option type=number value="1">330x12</option>
+            <option value="2">330x24</option>
+            <option value="3">330x6x4</option>
+            <option value="4">440x12</option>
+            <option value="5">440x24</option>
+            <option value="6">440x6x4</option>
+        </select>
+        <input id="inputAmtCases2">
+        
+        </div>    
+        
+    <div id="fm3">
+        <select name="format3" id="format3"  >Select...
+            <option type=number value="1">330x12</option>
+            <option value="2">330x24</option>
+            <option value="3">330x6x4</option>
+            <option value="4">440x12</option>
+            <option value="5">440x24</option>
+            <option value="6">440x6x4</option>
+        </select>
+        <input id="inputAmtCases3">
+        
+        </div>     
     
+      <div id="fm4">
+        <select name="format4" id="format4"  >Select...
+            <option type=number value="1">330x12</option>
+            <option value="2">330x24</option>
+            <option value="3">330x6x4</option>
+            <option value="4">440x12</option>
+            <option value="5">440x24</option>
+            <option value="6">440x6x4</option>
+        </select>
+        <input id="inputAmtCases4">
+        
+        </div>
+        
+    <div id="fm5">
+        <select name="format5" id="format5"  >Select...
+            <option type=number value="1">330x12</option>
+            <option value="2">330x24</option>
+            <option value="3">330x6x4</option>
+            <option value="4">440x12</option>
+            <option value="5">440x24</option>
+            <option value="6">440x6x4</option>
+        </select>
+        <input id="inputAmtCases5">
+        
+        </div>    
+        
+    <div id="fm6">
+        <select name="format6" id="format6"  >Select...
+            <option type=number value="1">330x12</option>
+            <option value="2">330x24</option>
+            <option value="3">330x6x4</option>
+            <option value="4">440x12</option>
+            <option value="5">440x24</option>
+            <option value="6">440x6x4</option>
+        </select>
+        <input id="inputAmtCases6">
+        
+        </div>        
+
+
+ </div>
+
+<!-- ------------------------------------------------------------------------>      
+  <div class="materials-section">
+
+  
+    <span><input type=number id="input-lids" placeholder="Input Lids Sleeves"></span>
+    <span><input type=text id="input-lids-colour" placeholder="Input Lids Colour"></span>
     
-<tbody>
-  <tr>
-    <td>330 x 12</td>
-    <td><input type=number id="330x12-input"></td>
-    <td class="blank"></td>
-  </tr>
-  <tr>
-    <td>330 x 24</td>
-    <td><input type=number id="330x24-input"></td>
-    <td class="blank"></td>
-  </tr>
-  <tr>
-    <td>440 x 12</td>
-    <td><input type=number id="440x12-input"></td>
-    <td class="blank"></td>
-  </tr>
-  <tr>
-    <td>440 x 24</td>
-    <td><input type=number id="440x24-input"></td>
-    <td class="blank"></td>
-  </tr>
-      <tr>
-    <td class="blank"></td>
-    <td class="blank"></td>
-    <td class="blank"></td>
-  </tr>
-  <tr>
-    <td>Lids</td>
-    <td><input type=number id="input-lids" placeholder="Input Lids Sleeves"></td>
-    <td id="how-many-lids"></td>
-  </tr>
-  <tr>
-    <td>330 cans</td>
-    <td> <input type=number id="input-330" placeholder="Input 330 Layers"></td>
-    <td id="how-many-cans-330"></td>
-  </tr>
-  <tr>
-    <td>440 cans</td>
-    <td><input type=number id="input-440" placeholder="Input 440 Layers"></td>
-    <td id="how-many-cans-440"></td>
-  </tr>
-  <tr>
-    <td class="blank"></td>
-    <td class="blank"></td>
-    <td class="blank"></td>
-  </tr>
-  <tr>
-    <td>Lid Waste</td>
-    <td id="lid-waste"></td>
-    <td class="blank"></td>
-  </tr>
-  <tr>
-    <td>330 Waste</td>
-    <td id="330-waste"></td>
-    <td class="blank"></td>
-  </tr>
-  <tr>
-    <td>440 Waste</td>
-    <td id="440-waste"></td>
-    <td class="blank"><button id="calc-button">Calculate</button></td>
-  </tr>
-</tbody>
-</table>    
+    <span> <input type=number id="input-330" placeholder="Input 330 Layers"></span>
+
+    <span><input type=text id="input-330-can-type" placeholder="Input 330 Can Type"></span>
     
+    <span><input type=number id="input-440" placeholder="Input 440 Layers"></span>
     
+    <span><input type=text id="input-440-can-type" placeholder="Input 440 Can Type"></span>
+
+</div>
+
+</span> <!--input form end-->     
     
+<!-- ------------------------------------------------------------------------>     
+<div id="calc-button"><h3>CALCULATE!</h3> </div>    
+
+<!-- ------------------------------------------------------------------------> 
     
+    <div id="print-box">
+        <p id="results"></p>
+    </div>
     
     
 </body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="main.js"></script>
-    
-    
 </html>
