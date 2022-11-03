@@ -31,167 +31,59 @@ $(document).ready(function(){
    }); 
 //--
     $("#calc-button").on("click", function() {
-        console.log("You Clicked Calculate!")
     
-//-The Numbers --    
-//function workerBot (inputAmt, formNo)  //      
-let in1 = Number($("#inputAmtCases1").val() ).toLocaleString();    
-let in1MultBy = 0;         
-        if ( Number($("#format1").val()) === 1 || 4 ) {in1MultBy = 12;} else {in1MultBy = 24;};
-let in1CaseFormat = '';
+//-The Numbers --         
+    function getCaseFormat(n) {
         
-        switch ( Number($("#format1").val()) ) {
+        switch (Number(n)) {
             case 1:
-                in1CaseFormat = `330__12 //:`;              
+                return `330__12 //:`;              
             break;
             case 2:
-                in1CaseFormat = `330__24 //:`;               
+                return `330__24 //:`;               
             break;
             case 3:
-                in1CaseFormat = `330_6*4 //:`;               
+                return `330_6*4 //:`;               
             break;
             case 4:
-                in1CaseFormat = `440__12 //:`;         
+                return `440__12 //:`;         
             break;
             case 5:
-                in1CaseFormat = `440__24 //:`;
+                return `440__24 //:`;
             break;
             case 6:
-                in1CaseFormat = `440_6*4 //:`;        
+                return `440_6*4 //:`;        
             break;
         }
         
-let in2 = Number($("#inputAmtCases2").val() ).toLocaleString();    
-let in2MultBy = 0;         
-        if ( Number($("#format2").val()) === 1 || 4 ) {in1MultBy = 12;} else {in2MultBy = 24;};
-let in2CaseFormat = '';
+    };
         
-        switch ( Number($("#format2").val()) ) {
-            case 1:
-                in2CaseFormat = `330__12 //:`;              
-            break;
-            case 2:
-                in2CaseFormat = `330__24 //:`;               
-            break;
-            case 3:
-                in2CaseFormat = `330_6*4 //:`;               
-            break;
-            case 4:
-                in2CaseFormat = `440__12 //:`;         
-            break;
-            case 5:
-                in2CaseFormat = `440__24 //:`;
-            break;
-            case 6:
-                in2CaseFormat = `440_6*4 //:`;        
-            break;
-        }
-                
-let in3 = Number($("#inputAmtCases3").val() ).toLocaleString();    
-let in3MultBy = 0;         
-        if ( Number($("#format3").val()) === 1 || 4 ) {in1MultBy = 12;} else {in3MultBy = 24;};
-let in3CaseFormat = '';
+    let in1CaseFormat = getCaseFormat($("#format1").val());
+    let in2CaseFormat = getCaseFormat($("#format2").val());
+    let in3CaseFormat = getCaseFormat($("#format3").val());
+    let in4CaseFormat = getCaseFormat($("#format4").val());
+    let in5CaseFormat = getCaseFormat($("#format5").val());
+    let in6CaseFormat = getCaseFormat($("#format6").val());
         
-        switch ( Number($("#format3").val()) ) {
-            case 1:
-                in3CaseFormat = `330__12 //:`;              
-            break;
-            case 2:
-                in3CaseFormat = `330__24 //:`;               
-            break;
-            case 3:
-                in3CaseFormat = `330_6*4 //:`;               
-            break;
-            case 4:
-                in3CaseFormat = `440__12 //:`;         
-            break;
-            case 5:
-                in3CaseFormat = `440__24 //:`;
-            break;
-            case 6:
-                in3CaseFormat = `440_6*4 //:`;        
-            break;
-        }
-                        
-let in4 = Number($("#inputAmtCases4").val() ).toLocaleString();    
-let in4MultBy = 0;         
-        if ( Number($("#format4").val()) === 1 || 4 ) {in1MultBy = 12;} else {in4MultBy = 24;};
-let in4CaseFormat = '';
+//-- THIS BIT DOESNT WORK
+
+    
+    function getMultBy(n) {
+    console.log(`One Thru Six // /${n}/ //` + typeof n )
+       return n === 1 || 4 ? 12 : 24; 
+    }
         
-        switch ( Number($("#format4").val()) ) {
-            case 1:
-                in4CaseFormat = `330__12 //:`;              
-            break;
-            case 2:
-                in4CaseFormat = `330__24 //:`;               
-            break;
-            case 3:
-                in4CaseFormat = `330_6*4 //:`;               
-            break;
-            case 4:
-                in4CaseFormat = `440__12 //:`;         
-            break;
-            case 5:
-                in4CaseFormat = `440__24 //:`;
-            break;
-            case 6:
-                in4CaseFormat = `440_6*4 //:`;        
-            break;
-        }
-                
- let in5 = Number($("#inputAmtCases5").val() ).toLocaleString();    
-let in5MultBy = 0;         
-        if ( Number($("#format5").val()) === 1 || 4 ) {in1MultBy = 12;} else {in5MultBy = 24;};
-let in5CaseFormat = '';
-        
-        switch ( Number($("#format5").val()) ) {
-            case 1:
-                in5CaseFormat = `330__12 //:`;              
-            break;
-            case 2:
-                in5CaseFormat = `330__24 //:`;               
-            break;
-            case 3:
-                in5CaseFormat = `330_6*4 //:`;               
-            break;
-            case 4:
-                in5CaseFormat = `440__12 //:`;         
-            break;
-            case 5:
-                in5CaseFormat = `440__24 //:`;
-            break;
-            case 6:
-                in5CaseFormat = `440_6*4 //:`;        
-            break;
-        }               
+        console.log(getMultBy(1));
+    let in1MultBy = getMultBy($("#format1").val());
         
         
-let in6 = Number($("#inputAmtCases6").val() ).toLocaleString();    
-let in6MultBy = 0;         
-        if ( Number($("#format6").val()) === 1 || 4 ) {in1MultBy = 12;} else {in6MultBy = 24;};
-let in6CaseFormat = '';
-        
-        switch ( Number($("#format6").val()) ) {
-            case 1:
-                in6CaseFormat = `330__12 //:`;              
-            break;
-            case 2:
-                in6CaseFormat = `330__24 //:`;               
-            break;
-            case 3:
-                in6CaseFormat = `330_6*4 //:`;               
-            break;
-            case 4:
-                in6CaseFormat = `440__12 //:`;         
-            break;
-            case 5:
-                in6CaseFormat = `440__24 //:`;
-            break;
-            case 6:
-                in6CaseFormat = `440_6*4 //:`;        
-            break;
-        }               
-            
+//-- THIS BIT DOESNT WORK ^^^^^^^^^^^^^     
+let in1 = Number($("#inputAmtCases1").val() ).toLocaleString();
+let in2 = Number($("#inputAmtCases2").val() ).toLocaleString();
+let in3 = Number($("#inputAmtCases3").val() ).toLocaleString();
+let in4 = Number($("#inputAmtCases4").val() ).toLocaleString();
+let in5 = Number($("#inputAmtCases5").val() ).toLocaleString();
+let in6 = Number($("#inputAmtCases6").val() ).toLocaleString();
 //--
 let inputLids = $("#input-lids").val()
 let input330 = $("#input-330").val()
@@ -206,9 +98,10 @@ let canType330 = $("#input-330-can-type").val().toUpperCase();
 let canType440 = $("#input-440-can-type").val().toUpperCase();
 //-- Brand & Gyle for display on the MAIN OUTPUT
 const bgInput = $("#bg-input").val().toUpperCase();
+        
 //------THE MAIN OUTPUT -------------------------------------
 
-        $(".nR").remove()
+        $(".nR").remove() /* Clears the slate */
         $("#results").append(`<div class="nR">`); /*--Results Div Open--*/
         
 /*GYLE*/$(".nR").append(`<p>${bgInput}</p>`); 
