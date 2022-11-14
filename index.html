@@ -6,8 +6,19 @@
     
 </head>
 <body>
+    <div id="tabs-at-the-top">
+    <div class="tab" id="tab1"><p class="tab-name">Final Packed</p></div>
+    <div class="tab" id="tab2"><p class="tab-name">BBE Finder</p></div>
+    <div class="tab" id="tab3"><p class="tab-name">Pallet Times</p></div>
+    <div class="tab" id="tab4"><p class="tab-name">Soon...</p></div>
+    </div>
 
-    
+    <div id="splash">
+        <p>Welcome to TheMonkTool</p>
+        <p>Select a tab from the top to activate . . .</p>
+    </div>
+<!-- \\\\\\\\\\\\\\\\\\\\ Tab 1 Final Packed ---->     
+<div id="final-packed">
 <span class="input-form">
 <!-- ------------------------------------------------------------------------>     
     <div class="top-section">
@@ -138,10 +149,84 @@
     <div id="print-box">
         <p id="results"></p>
     </div>
+</div>
+
+    
+<div id="bbe"><!-- \\\\\\\\\\\\\\\\\\\\ Tab 2 BBE -----------------> 
+    <div id="bbe-body">
+    <span class="date-box"><h3 id="tddate">THE DATE TODAY IS:</h3></span>
+    <span class="date-box"><h3 id="sixweekdate">THE DATE IN 6 WEEKS:</h3></span>
+    <span class="date-box"><h3 id="sixmonthdate">THE DATE IN 6 MONTHS:</h3></span>
+    <span class="date-box"><h3 id="sevenmonthdate">THE DATE IN 7 MONTHS:</h3></span>
+</div>
+   
+</div>
+    
+<div id="pallet-time-est"><!-- \\\\\\\\\\\\\\\\\\\\ Tab 3 Pallet Times -----------------> 
+    <div id="pte-body">
+        <div> 
+            <span>
+             <select name="no-of-pallets" id="no-of-pallets" > <!-- Select How Many Pallets... -->
+    <!---->         <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                </select>
+
+                  <select name="pallet-format" id="pallet-format" > <!-- Select Pallet Format... -->
+    <!---->         <option value="1">330x12 or 330x6*4</option>
+                    <option value="2">440x12 or 440x6*4</option>
+                    <option value="3">330x24</option>
+                    <option value="4">440x24</option>
+                </select>
+            </span> 
+        </div> 
+    </div>
+    
+    
+</div>
+    
+    
+<div id="coming-soon"><!-- \\\\\\\\\\\\\\\\\\\\ Tab 4 Coming Soon-----------------> 
+    <div id="under-construction"></div>
+    
+    
+</div>
     
     
 </body>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="main.js"></script>
+    <script src="pallet.js"></script>
+    <script src="bbe.js"></script>
+    <script src="finalpacked.js"></script>
 </html>
