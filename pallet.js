@@ -9,7 +9,7 @@ $(document).ready(function(){
     // Add the option for breaks 
     
 
- $("#no-of-pallets, #pallet-format, #machine-speed, #fillheads-on").on("change", function() { 
+ $("#no-of-pallets, #pallet-format, #machine-speed, #fillheads-on").on("change","select", function() { 
 
     const runningSpeed = $("#machine-speed").val()/60;
 
