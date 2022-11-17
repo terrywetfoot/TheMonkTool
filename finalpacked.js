@@ -2,6 +2,10 @@
 
 $(document).ready(function(){ 
 
+//TO DO
+    //ADD WASTAGE 
+    //ADD BOX USAGE FOR 6x4
+
 // -- \\\\\\\\\\\\\\\\\\\\\ FINAL PACKED \\\\\\\\\\\\\\\\\\\\\\\   -- \\
    $("#no-of-formats").on("change", function() { 
     switch (Number($("#no-of-formats").val())) {
@@ -30,9 +34,29 @@ $(document).ready(function(){
             break;
     }
    }); 
-    
+
+   $("#format1, #format2, #format3, #format4, #format5, #format6").on("change", function() {
+        //Stick those format options in an array for filtering
+        let formats = [
+        $("#format1").val(), 
+        $("#format2").val(), 
+        $("#format3").val(),
+        $("#format4").val(),
+        $("#format5").val(),
+        $("#format6").val()
+        ];
+        //Filter through those formats to find if they're 330/440 or neither
+        let formatsAre330 = formats.find(format =>  format <= 3);
+        let formatsAre440 = formats.find(format =>  format >= 5);
+        
+        //If there are any 330 or 440, then show the can input below
+        Number(formatsAre330) ? $("#selected-330").show() : $("#selected-330").hide() ;
+        Number(formatsAre440) ? $("#selected-440").show() : $("#selected-440").hide() ;
+
+    });
+
 //--
-    $("#calc-button").on("click", function() {
+   $("#calc-button").on("click", function( ) { 
     //Case Formats Packed, the number of different formats that were packed in a packaging run.
     const CFP = [
         $("#format1").val(), 
@@ -49,7 +73,8 @@ $(document).ready(function(){
         [`330_6*4 //:`,24],
         [`440__12 //:`,12],
         [`440__24 //:`,24],
-        [`440_6*4 //:`,24]
+        [`440_6*4 //:`,24],
+        [``, 0]
     ];
     
     //This function sets the user's input format type, to whichever they have chosen.    
@@ -64,14 +89,17 @@ $(document).ready(function(){
             case 3:
                 return formatTypes[2][0];               
             break;
-            case 4:
+            case 5:
                 return formatTypes[3][0];         
             break;
-            case 5:
+            case 6:
                 return formatTypes[4][0];
             break;
-            case 6:
+            case 7:
                 return formatTypes[5][0];        
+            break;
+        default:
+                return formatTypes[6][0];        
             break;
     };
         }
@@ -103,14 +131,15 @@ $(document).ready(function(){
     let canType330 = $("#input-330-can-type").val().toUpperCase();
     let canType440 = $("#input-440-can-type").val().toUpperCase();
 //-- Brand & Gyle for display on the MAIN OUTPUT
-    const bgInput = $("#bg-input").val().toUpperCase();
         
 //------THE MAIN OUTPUT -------------------------------------
+
+
 
         $(".nR").remove() /* Clears the slate */
         $("#results").append(`<div class="nR">`); /*--Results Div Open--*/
         
-/*GYLE*/$(".nR").append(`<p>${bgInput}</p>`); 
+/*GYLE*/$(".nR").append(`<p>`+ $("#bg-input").val().toUpperCase() + `</p>`);  
         
 /*PAKD*/$(".nR").append(`PACKED__<br>`);
 

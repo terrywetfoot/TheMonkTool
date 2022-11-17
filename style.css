@@ -70,6 +70,12 @@ body {
     display: none;
 }
 
+
+/*--Hiding 330/440 Can inputs  --*/
+#selected-330, #selected-440 {
+    display: none;
+}
+
 /*--table-------------------*/
 .input-form {
     display: grid;
@@ -211,7 +217,7 @@ input {
 
 #pte-body {
     display: grid;
-    grid-template-rows: repeat(6, 40px);
+    grid-template-rows: 1fr auto;
     grid-template columns: auto;
     
     background: rgba(72, 123, 62, .9);
