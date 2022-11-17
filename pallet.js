@@ -9,7 +9,7 @@ $(document).ready(function(){
     // Add the option for breaks 
     
 
- $("#no-of-pallets, #pallet-format, #machine-speed, #fillheads-on").on("change", function() { 
+ $("#no-of-pallets, #pallet-format, #machine-speed, #fillheads-on").on('change', function() { 
 
     const runningSpeed = $("#machine-speed").val()/60;
 
@@ -21,7 +21,7 @@ $(document).ready(function(){
 
     //Pallet build time returned in minutes 
     const palletTimesAtMax = palletFormat / runningSpeed
-    const palletBuildTime = palletTimesAtMax * headsOn;
+    const palletBuildTime = palletTimesAtMax / headsOn;
     const targetBuildTime = palletBuildTime.toFixed(0)
     
     
