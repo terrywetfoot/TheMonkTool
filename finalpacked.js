@@ -35,7 +35,7 @@ $(document).ready(function(){
     }
    }); 
 
-   $("#format1, #format2, #format3, #format4, #format5, #format6").on("change","input", function() {
+   $("#format1, #format2, #format3, #format4, #format5, #format6").on("change", function() {
         //Stick those format options in an array for filtering
         let formats = [
         $("#format1").val(), 
