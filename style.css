@@ -66,7 +66,7 @@ body {
 
 /*--Hiding the format selections--*/
 
-#fm2, #fm3, #fm4, #fm5, #fm6 {
+#fm1, #fm2, #fm3, #fm4, #fm5, #fm6 {
     display: none;
 }
 
@@ -242,6 +242,11 @@ input {
     color:black;
 }
 
+#display-pallet-times{
+    padding: 20px;
+    background: rgba(240, 240, 210, .3);
+    font-family: monospace;
+}
 
 /*--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-- TAB 4 ??? \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 #coming-soon {
