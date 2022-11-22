@@ -7,27 +7,28 @@ $(document).ready(function(){
     //ADD BOX USAGE FOR 6x4
 
 // -- \\\\\\\\\\\\\\\\\\\\\ FINAL PACKED \\\\\\\\\\\\\\\\\\\\\\\   -- \\
+    //jQuery .each loop, triggered by "change" of no-of-formats - showing apt no. of boxes 
     $("#no-of-formats").on("change", function() {
-        const userSelectedInputs = Number($("#no-of-formats").val());
-        const formatArray = [$("#fm1"), $("#fm2"), $("#fm3"), $("#fm4"), $("#fm5"), $("#fm6")];
-        for (let i = 0; i <= userSelectedInputs; i++) { 
-            formatArray[i].show();
-        };
-        for (let i = 5; i >= userSelectedInputs; i--) {
-            formatArray[i].hide();
-        };
-    });
+        const userSelectedInput = Number($("#no-of-formats").val());
+        $(".fm").each(function(index) {
+            if (userSelectedInput >= index + 1) {
+                $(this).show();
+            } else { 
+                $(this).hide();
+            };
+        });    
+    });    
 
    $("#format1, #format2, #format3, #format4, #format5, #format6").on("change", function() {
         //Stick those format options in an array for filtering
         let formats = [
-        $("#format1").val(), 
-        $("#format2").val(), 
-        $("#format3").val(),
-        $("#format4").val(),
-        $("#format5").val(),
-        $("#format6").val()
-        ];
+            $("#format1").val(), 
+            $("#format2").val(), 
+            $("#format3").val(),
+            $("#format4").val(),
+            $("#format5").val(),
+            $("#format6").val()
+            ];
         //Filter through those formats to find if they're 330/440 or neither
         let formatsAre330 = formats.find(format =>  format <= 3);
         let formatsAre440 = formats.find(format =>  format >= 5);
