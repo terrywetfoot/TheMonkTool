@@ -16,16 +16,18 @@ console.log("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _")
             $(this).toggle(Number($("#no-of-formats").val()) >= index + 1);
         });    
     });    
-    // Create an array of the formats and check whether any are 330/440 (below or above value of 4 respectively)
-    // then show or hide the respective can input boxes  
+    // Check whether any formats selected are 330/440 (below or above value of 4 respectively)
+    // then show the respective can inputs if they are
     $(".format-select").on("change", function() {
-        let formats = $(".format-select").map(function() {
-        return this.value;
-        }).get();
-        $("#selected-330").toggle(formats.find(format => format <= 3) <=3 ? true : false);
-        $("#selected-440").toggle(formats.find(format => format >= 5) >=5 ? true : false);
-     });
+        let any330 = $(".format-select").filter(function(){
+            return $(".format-select").val() <= 3 }).length > 0;
+        let any440 = $(".format-select").filter(function(){
+            return $(".format-select").val() >= 5 }).length > 0;
+        $("#selected-330").toggle(any330);
+        $("#selected-440").toggle(any440);
+    });
 
+    
 //--
    $("#calc-button").on("click", function( ) { 
         //Case Formats Packed, the number of different formats that were packed in a packaging run.
