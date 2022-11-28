@@ -1,43 +1,30 @@
 /*eslint-env es6*/
 
 $(document).ready(function(){ 
-
+console.log("Welcome to TheMonkTool Console. This is where I debug!")
+console.log("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _")
 //TO DO
     //ADD WASTAGE 
     //ADD BOX USAGE FOR 6x4
 
+
 // -- \\\\\\\\\\\\\\\\\\\\\ FINAL PACKED \\\\\\\\\\\\\\\\\\\\\\\   -- \\
+
     //jQuery .each loop, triggered by "change" of no-of-formats - showing apt no. of boxes 
     $("#no-of-formats").on("change", function() {
-        const userSelectedInput = Number($("#no-of-formats").val());
         $(".fm").each(function(index) {
-            if (userSelectedInput >= index + 1) {
-                $(this).show();
-            } else { 
-                $(this).hide();
-            };
+            $(this).toggle(Number($("#no-of-formats").val()) >= index + 1);
         });    
     });    
-
-   $("#format1, #format2, #format3, #format4, #format5, #format6").on("change", function() {
-        //Stick those format options in an array for filtering
-        let formats = [
-            $("#format1").val(), 
-            $("#format2").val(), 
-            $("#format3").val(),
-            $("#format4").val(),
-            $("#format5").val(),
-            $("#format6").val()
-            ];
-        //Filter through those formats to find if they're 330/440 or neither
-        let formatsAre330 = formats.find(format =>  format <= 3);
-        let formatsAre440 = formats.find(format =>  format >= 5);
-        
-        //If there are any 330 or 440, then show the can input below
-        Number(formatsAre330) ? $("#selected-330").show() : $("#selected-330").hide() ;
-        Number(formatsAre440) ? $("#selected-440").show() : $("#selected-440").hide() ;
-
-    });
+    // Create an array of the formats and check whether any are 330/440 (below or above value of 4 respectively)
+    // then show or hide the respective can input boxes  
+    $(".format-select").on("change", function() {
+        let formats = $(".format-select").map(function() {
+        return this.value;
+        }).get();
+        $("#selected-330").toggle(formats.find(format => format <= 3) <=3 ? true : false);
+        $("#selected-440").toggle(formats.find(format => format >= 5) >=5 ? true : false);
+     });
 
 //--
    $("#calc-button").on("click", function( ) { 

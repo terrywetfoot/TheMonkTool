@@ -79,7 +79,7 @@ body {
 /*--table-------------------*/
 .input-form {
     display: grid;
-    grid-template-rows: 90px auto 1fr;
+    grid-template-rows: auto auto 1fr;
     grid-template columns: auto;
     
     background: rgba(241, 113, 41, .9);
