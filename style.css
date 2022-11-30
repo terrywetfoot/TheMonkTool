@@ -159,12 +159,12 @@ input {
     
 }
 
-.nR {
-    width: 450px;
+#new-result {
+    width: 300px;
     padding: 2%;
-    background: rgba(240, 240, 240, .8);
-    margin: 15px;
-    box-shadow: box-shadow: 5px 5px 1px rgba(50, 70, 90, .9);
+    background: rgba(240, 240, 240, .3);
+    margin: 10px;
+    box-shadow: box-shadow: 5px 5px 1px rgba(50, 70, 90, .4);
 }
 
 /*--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-- TAB 2 BBE \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
