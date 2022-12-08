@@ -71,17 +71,17 @@ body {
 }
 
 
-/*--Hiding 330/440 Can inputs  --*/
-#selected-330, #selected-440 {
+/*--Hiding 330/440 Can and box inputs--*/
+#selected-330, #selected-440, #fridge-pack-330, #fridge-pack-440 {
     display: none;
 }
+
 
 /*--table-------------------*/
 .input-form {
     display: grid;
     grid-template-rows: auto auto 1fr;
-    grid-template columns: auto;
-    
+    grid-template-columns: auto;
     background: rgba(241, 113, 41, .9);
     grid-area: 1/1;
     width: 98%;
@@ -128,14 +128,14 @@ input, select{
 }
 
 input {
-    width: 210px;
+    width: 250px;
     
 }
 ::placeholder {
     color: rgba(230, 230, 230, .4)
 }   
 
-/*--calc-------------------*/
+/*--calc and copy buttons ---*/
 #calc-button {
     grid-area: 2/2;
     font-size: 12px;
@@ -148,23 +148,60 @@ input {
     color: black;
 }
 
-#calc-button:hover {
+#calc-button:hover, #copy-button:hover {
     filter: invert(.15);
     cursor: pointer;    
 }
 
-/*---results---------------*/
-#print-box {
-    grid-area: 3/2;
-    
+#copy-button {
+    display: none;
+    font-size: 10px;
+    padding: 1px 15px;
+    background: rgba(255, 220, 190, .9);
+    border-radius: 3%;
+    box-shadow:inset 0 0 10px 3px rgba(0,0,0, .1)  ,5px 5px 1px rgba(50, 70, 90, .3);
+    width: fit-content;
+    margin: 20px 0;
+    color: black;
 }
 
-#new-result {
+
+/*---results---------------*/
+
+
+#print-box {
+    grid-area: 3/2;
     width: 300px;
     padding: 2%;
     background: rgba(240, 240, 240, .3);
     margin: 10px;
-    box-shadow: box-shadow: 5px 5px 1px rgba(50, 70, 90, .4);
+    box-shadow: 5px 5px 1px rgba(50, 70, 90, .4);
+    
+}
+
+.new-result {
+    margin: 0;
+}
+
+.final-output {
+    display: none;
+}
+
+div.new-result {
+    margin-top: 15px;
+}
+
+li.new-result {
+    list-style: none;
+}
+
+#wastage-box {
+    grid-area: 4/2;
+    width: 300px;
+    padding: 2%;
+    background: rgba(240, 240, 240, .3);
+    margin: 10px;
+    box-shadow: 5px 5px 1px rgba(50, 70, 90, .4);
 }
 
 /*--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-- TAB 2 BBE \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -179,7 +216,7 @@ input {
 #bbe-body {
     display: grid;
     grid-template-rows: repeat(4, 90px);
-    grid-template columns: auto;
+    grid-template-columns: auto;
     
     background: rgba(3, 129, 183, .9);
     grid-area: 1/1;
@@ -218,7 +255,7 @@ input {
 #pte-body {
     display: grid;
     grid-template-rows: 1fr auto;
-    grid-template columns: auto;
+    grid-template-columns: auto;
     
     background: rgba(72, 123, 62, .9);
     grid-area: 1/1;
@@ -260,7 +297,7 @@ input {
 #under-construction {
     display: grid;
     grid-template-rows: repeat(6, 40px);
-    grid-template columns: auto;
+    grid-template-columns: auto;
     
     background: rgba(165, 41, 24, .9);
     grid-area: 1/1;
@@ -272,5 +309,6 @@ input {
     border-radius: 1%;
     border-width: 5px;
    
+
     box-shadow: inset 0 0 1px 1px rgba(0,0,0, .1), 10px 12px 0 0 rgba(0,0,0, .2);
 }
